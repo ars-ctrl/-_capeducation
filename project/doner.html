@@ -1,0 +1,331 @@
+# Код файла `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeFlow — Эффективное распределение времени</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Time<span>Flow</span></div>
+
+  <nav>
+    <a href="#home">Главная</a>
+    <a href="#tasks">Задачи</a>
+    <a href="#productivity">Продуктивность</a>
+    <a href="#pomodoro">Pomodoro</a>
+    <a href="#tips">Советы</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="home" class="hero">
+
+  <div>
+    <p class="eyebrow">ТАЙМ-МЕНЕДЖМЕНТ</p>
+
+    <h1>
+      Управляй временем.<br>
+      <span>Управляй результатом.</span>
+    </h1>
+
+    <p class="lead">
+      Планируй задачи, контролируй продуктивность
+      и работай по технике Pomodoro
+      в одном удобном приложении.
+    </p>
+
+    <a class="btn" href="#tasks">
+      Начать планирование
+    </a>
+  </div>
+
+  <div class="clock-card">
+    <div id="date"></div>
+    <div id="clock">00:00:00</div>
+    <small>Текущее время</small>
+  </div>
+
+</section>
+
+
+<section class="info-grid">
+
+  <article>
+    <b>🍅 Pomodoro</b>
+    <p>25 минут концентрации и 5 минут отдыха.</p>
+  </article>
+
+  <article>
+    <b>🎯 Эйзенхауэр</b>
+    <p>Разделяй задачи по важности и срочности.</p>
+  </article>
+
+  <article>
+    <b>📈 Правило 80/20</b>
+    <p>
+      Сосредоточься на действиях,
+      которые дают главный результат.
+    </p>
+  </article>
+
+</section>
+
+
+<section id="tasks">
+
+  <h2>Планировщик задач</h2>
+
+  <p class="section-text">
+    Добавляй дела, выбирай категорию и приоритет,
+    а после выполнения отмечай задачу как готовую.
+  </p>
+
+  <div class="task-form">
+
+    <input
+      id="taskInput"
+      placeholder="Например: подготовить проект"
+    >
+
+    <select id="category">
+      <option>Учёба</option>
+      <option>Работа</option>
+      <option>Спорт</option>
+      <option>Отдых</option>
+      <option>Другое</option>
+    </select>
+
+    <select id="priority">
+      <option>Низкий</option>
+      <option>Средний</option>
+      <option>Высокий</option>
+    </select>
+
+    <button class="btn" id="addTask">
+      Добавить
+    </button>
+
+  </div>
+
+  <div id="taskList" class="task-list"></div>
+
+</section>
+
+
+<section id="productivity" class="dark-section">
+
+  <h2>Калькулятор продуктивности</h2>
+
+  <p class="section-text">
+    Укажи, сколько часов в день уходит
+    на разные виды деятельности.
+  </p>
+
+  <div class="calc-grid">
+
+    <label>
+      Учёба
+      <input type="number" min="0" id="study" value="4">
+    </label>
+
+    <label>
+      Работа
+      <input type="number" min="0" id="work" value="2">
+    </label>
+
+    <label>
+      Отдых
+      <input type="number" min="0" id="rest" value="3">
+    </label>
+
+    <label>
+      Развлечения
+      <input type="number" min="0" id="fun" value="2">
+    </label>
+
+  </div>
+
+  <button class="btn" id="calc">
+    Рассчитать
+  </button>
+
+  <div id="result" class="result">
+    Нажми «Рассчитать», чтобы увидеть результат.
+  </div>
+
+  <div class="progress">
+    <div id="progressBar"></div>
+  </div>
+
+</section>
+
+
+<section id="pomodoro">
+
+  <h2>Таймер Pomodoro</h2>
+
+  <p class="section-text">
+    Работай сосредоточенно,
+    затем делай небольшой перерыв.
+  </p>
+
+  <div class="timer-card">
+
+    <div class="timer-mode" id="timerMode">
+      Работа
+    </div>
+
+    <div id="timer">
+      25:00
+    </div>
+
+    <div class="timer-controls">
+
+      <button class="btn" id="start">
+        Старт
+      </button>
+
+      <button class="btn secondary" id="pause">
+        Пауза
+      </button>
+
+      <button class="btn secondary" id="reset">
+        Сброс
+      </button>
+
+    </div>
+
+    <div class="timer-settings">
+
+      <label>
+        Работа, мин
+        <input
+          type="number"
+          id="workMin"
+          value="25"
+          min="1"
+        >
+      </label>
+
+      <label>
+        Перерыв, мин
+        <input
+          type="number"
+          id="breakMin"
+          value="5"
+          min="1"
+        >
+      </label>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="tips">
+
+  <h2>Рекомендации</h2>
+
+  <div class="tips">
+
+    <article>
+      <span>01</span>
+      <h3>Планируй заранее</h3>
+      <p>
+        Вечером запиши несколько главных
+        задач на следующий день.
+      </p>
+    </article>
+
+    <article>
+      <span>02</span>
+      <h3>Убирай отвлечения</h3>
+      <p>
+        Отключи лишние уведомления
+        и сосредоточься на одной задаче.
+      </p>
+    </article>
+
+    <article>
+      <span>03</span>
+      <h3>Делай перерывы</h3>
+      <p>
+        Регулярный отдых помогает сохранять
+        концентрацию и не перегружаться.
+      </p>
+    </article>
+
+    <article>
+      <span>04</span>
+      <h3>Оцени результат</h3>
+      <p>
+        В конце дня посмотри, какие задачи
+        выполнены и что можно улучшить.
+      </p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+  <h2>Связаться с разработчиком</h2>
+
+  <form id="contactForm">
+
+    <input
+      id="name"
+      placeholder="Ваше имя"
+      required
+    >
+
+    <input
+      id="email"
+      type="email"
+      placeholder="E-mail"
+      required
+    >
+
+    <textarea
+      id="message"
+      placeholder="Ваше сообщение"
+      required
+    ></textarea>
+
+    <button class="btn" type="submit">
+      Отправить
+    </button1>
+
+    <p id="formMessage"></p>
+
+  </form>
+
+</section>
+
+</main>
+
+
+<footer>
+  TimeFlow © 2026 · Проект
+  «Эффективное распределение времени»
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
+<s--sd.
